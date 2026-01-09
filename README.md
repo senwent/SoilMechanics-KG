@@ -24,3 +24,26 @@ cd soilkg
 python -m venv .venv
 source .venv/bin/activate    # macOS / Linux
 .venv\Scripts\activate       # Windows
+
+2. 安装依赖
+
+pip install -r requirements.txt
+
+
+3. 准备数据
+将 CSV 放在 data/SoilMechanicsMarkDown_sample.csv（或其它路径），CSV 必须包含列：实体A, 关系, 实体B（UTF-8-sig 编码，首行列名一致）。
+
+示例（CSV）：
+
+实体A,关系,实体B
+有效应力,影响,孔隙水压力
+固结,导致,沉降
+摩尔圆,用于,应力分析
+
+
+4. 运行示例（默认脚本）
+
+python src/soil_kg.py -i data/SoilMechanicsMarkDown_sample.csv -o demos/土力学知识图谱_demo.html
+
+
+然后在浏览器中打开 demos/土力学知识图谱_demo.html
